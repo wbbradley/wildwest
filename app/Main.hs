@@ -14,7 +14,7 @@ data Piece = Straight { length :: Float,
 
 -- General assumption is that pieces default orientation is to the east = (1, 0).
 
--- connectors :: Ray -> Piece -> [(Ray, JoinerKind)]
+-- connectors :: Ray -> Piece -> [Connector]
 connectors ray (Straight length start end) =
   [(rayAdd ray (Ray origin pi), start),
    (rayAdd ray (Ray east 0.0), end)]
